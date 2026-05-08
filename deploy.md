@@ -44,3 +44,22 @@ vllm serve /home/riyaojin/workspace/ai/llm_models/JinRiYao2001/Huihui-Qwen3-VL-3
   --limit-mm-per-prompt '{"image": 1, "video": 0}' \
   --host 0.0.0.0 --port 8000
 ```
+
+
+## flextensor
+```bash
+vllm serve /home/riyaojin/workspace/ai/llm_models/JinRiYao2001/Huihui-Qwen3-VL-30B-A3B-Instruct-abliterated-AWQ \
+  --served-model-name qwen3-vl-30b-awq \
+  --dtype bfloat16 \
+  --max-model-len 4096 \
+  --gpu-memory-utilization 0.92 \
+  --offload-backend prefetch \
+  --offload-group-size 4 \
+  --offload-num-in-group 2 \
+  --offload-prefetch-step 2 \
+  --offload-params experts \
+  --max-num-seqs 1 \
+  --enforce-eager \
+  --limit-mm-per-prompt '{"image": 1, "video": 0}' \
+  --host 0.0.0.0 --port 8000
+```
